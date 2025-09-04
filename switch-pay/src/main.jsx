@@ -19,7 +19,7 @@ import App from './App.jsx'
  const config = getDefaultConfig({
    appName : "SwitchPay",
   projectId,
-  chains:[sonicBlazeTestnet,sonicTestnet],
+  chains:[sonicBlazeTestnet],
   transports: {
     [sonicBlazeTestnet.id] : http("https://worldchain-sepolia.g.alchemy.com/v2/bBA5Mnb4SmI254K3uqriS"),
 
