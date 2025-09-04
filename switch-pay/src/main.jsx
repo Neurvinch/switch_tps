@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import {WagmiProvider} from "wagmi"
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import { http } from 'wagmi'
+import {sonicTestnet} from "viem/chains"
 import {RainbowKitProvider, darkTheme,getDefaultConfig} from "@rainbow-me/rainbowkit"
 import "@rainbow-me/rainbowkit/styles.css "
 import './index.css'
