@@ -33,9 +33,9 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <WagmiProvider>
-      <QueryClientProvider>
-        <RainbowKitProvider>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client = {queryClient}>
+        <RainbowKitProvider theme={theme} chains={[sonicBlazeTestnet]}>
           <App/>
         </RainbowKitProvider>
       </QueryClientProvider>
