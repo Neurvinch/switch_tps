@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
     <WagmiProvider>
       <QueryClientProvider>
         <RainbowKitProvider>
-          
+          <App/>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
