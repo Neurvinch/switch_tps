@@ -8,6 +8,14 @@ import "@rainbow-me/rainbowkit/styles.css "
 import './index.css'
 import App from './App.jsx'
 
+
+  const theme = darkTheme({
+      accentColor: '#7b3fe4',
+  accentColorForeground: "white",
+  fontStack : "system",
+  overlayBlur: "small",
+  })
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <WagmiProvider>
