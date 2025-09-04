@@ -9,6 +9,10 @@ import './index.css'
 import App from './App.jsx'
 
 
+ const projectId = ""
+
+ const queryClient = new  QueryClient()
+
   const theme = darkTheme({
       accentColor: '#7b3fe4',
   accentColorForeground: "white",
