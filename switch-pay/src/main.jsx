@@ -5,7 +5,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import { http } from 'wagmi'
 import {sonicBlazeTestnet} from "viem/chains"
 import {RainbowKitProvider, darkTheme,getDefaultConfig} from "@rainbow-me/rainbowkit"
-import "@rainbow-me/rainbowkit/styles.css "
+import "@rainbow-me/rainbowkit/styles.css"
 import './index.css'
 import App from './App.jsx'
 
