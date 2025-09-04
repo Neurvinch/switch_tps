@@ -10,6 +10,11 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <WagmiProvider>
+      <QueryClientProvider>
+        
+      </QueryClientProvider>
+    </WagmiProvider>
     <App />
   </StrictMode>,
 )
