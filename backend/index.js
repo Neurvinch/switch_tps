@@ -42,6 +42,37 @@ app.post("/create-stream", async (req,res) => {
 
 })
 
+   app.post("/withdraw", async (req,res) => {
+     
+
+    try {
+
+         const {streamId} = req.body;
+
+         const tx = await contract.withdraw(streamId);
+
+         const receipt = await tx.wait();
+
+         res.json({
+            success: true,
+            txHash: receipt.hash,
+            message: "Withdraw successful",
+         })
+
+        
+    } catch (error) {
+         
+        console.error("Error withdrawing from stream:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to withdraw from stream",
+            error: error.message,
+        });
+
+        
+    }
+   })
+
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
 })
