@@ -14,6 +14,15 @@ const contractABI = [
   "event Withdraw(uint256 streamId, uint256 amount)"
 ];
 
+const contract = new ethers.Contract(
+    process.env.CONTRACT_ADDRESS,
+    contractABI,
+    wallet
+)
+
+module.exports = contract;
+
+
 
 
 
