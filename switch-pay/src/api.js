@@ -10,3 +10,7 @@ export const createStream = async (recipient, ratePerSecond, duration) => {
         recipient, ratePerSecond,duration
     })
  }
+
+ export const withdraw = async (streamId ) => {
+    return aPI.post("/withdraw", {streamId})
+ };
