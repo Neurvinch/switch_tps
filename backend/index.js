@@ -11,12 +11,33 @@ app.get("/",(req,res) => {
 })
 
 
-app.post("/create-stream", (req,res) => {
+app.post("/create-stream", async (req,res) => {
 
     try {
+
+        const{recipient,ratePerSecond, duration} = req.body
+
+        const totalDeposit = BigInt(ratePerSecond) *BigInt(duration);
+
+
+        const tx = await contract.createStream(recipient, ratePerSecond, duration, {value: totalDeposit,});
+
+        const receipt = await tx.wait();
+
+
+        res.json({
+            success : true,
+            txHash: receipt.hash,
+            message: " Stream created successfully",
+        })
         
     } catch (error) {
-        
+        console.error("Error creating stream:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to create stream",
+            error: error.message,
+        });
     }
 
 })
