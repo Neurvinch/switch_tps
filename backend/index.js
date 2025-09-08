@@ -21,7 +21,7 @@ app.post("/create-stream", async (req,res) => {
         const totalDeposit = BigInt(ratePerSecond) *BigInt(duration);
 
 
-        const tx = await contract.createStream(recipient, ratePerSecond, duration, {value: totalDeposit,});
+        const tx = await contract.createStream(recipient, ratePerSecond, duration, {value: totalDeposit});
 
         const receipt = await tx.wait();
 
