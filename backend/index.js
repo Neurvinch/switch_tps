@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const contract = require("./ethersProvider")
+const {ethers} = require( "ethers")
 
 const app = express();
 app.use(cors());
