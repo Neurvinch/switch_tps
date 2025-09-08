@@ -13,17 +13,28 @@ import App from './App.jsx'
 
 
  const projectId = "8f701441da6e625d8a8be7f9e002437e"
+ 
+
+ const sonic_Testnet ={
+  id:14601 ,
+  name: "Sonic Testnet",
+  nativeCurrency: {name: "Sonic Testnet", symbol:"S", decimals : 18},
+  rpcUrls: {
+     default : {http : ["https://rpc.testnet.soniclabs.com"]},
+     public: { http :["https://rpc.testnet.soniclabs.com"]}
+
+  },
+
+  testnet : true
+}
 
  const queryClient = new  QueryClient()
 
  const config = getDefaultConfig({
    appName : "SwitchPay",
   projectId,
-  chains:[sonicBlazeTestnet],
-  transports: {
-    [sonicBlazeTestnet.id] : http("https://worldchain-sepolia.g.alchemy.com/v2/bBA5Mnb4SmI254K3uqriS"),
-
-  }
+  chains:[sonic_Testnet],
+  
  })
 
   const theme = darkTheme({
@@ -37,7 +48,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <WagmiProvider config={config}>
       <QueryClientProvider client = {queryClient}>
-        <RainbowKitProvider theme={theme} chains={[sonicBlazeTestnet]}>
+        <RainbowKitProvider theme={theme} chains={[sonic_Testnet]}>
           <App/>
         </RainbowKitProvider>
       </QueryClientProvider>
