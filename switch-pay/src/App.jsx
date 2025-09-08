@@ -27,7 +27,15 @@ function App() {
 
 
   const handleWithdraww = async () => {
-    
+      
+        try {
+          const res = await withdraw(streamID);
+          alert(`Withdraw successful! Tx Hash: ${res.data.txHash}`);
+
+          
+        } catch (error) {
+          console.error("Error withdrawing from stream:", error);
+        }
   }
   
 
