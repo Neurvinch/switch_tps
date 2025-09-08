@@ -41,7 +41,56 @@ function App() {
 
   return (
     <>
-      <ConnectButton/>
+        <div className="p-6 text-center">
+          <h1 className="text-3xl font-bold mb-4">🎥 Sonic StreamPay</h1>
+          <p className="mb-4">Real-time micropayments for streaming 🚀</p>
+
+          <div className="mb-4">
+            <ConnectButton />
+          </div>
+
+          <div className="mb-4">
+            <input
+              className="border p-2 rounded w-64 mb-2"
+              placeholder="Recipient Address"
+              value={recipient}
+              onChange={(e) => setRecipient(e.target.value)}
+            />
+            <input
+              className="border p-2 rounded w-64 mb-2"
+              placeholder="Rate Per Second (wei)"
+              value={rate}
+              onChange={(e) => setRate(e.target.value)}
+            />
+            <input
+              className="border p-2 rounded w-64 mb-2"
+              placeholder="Duration (seconds)"
+              value={duration}
+              onChange={(e) => setDuration(e.target.value)}
+            />
+            <button
+              className="bg-blue-500 text-white p-2 rounded"
+              onClick={handleCreateStream}
+            >
+              Start Stream
+            </button>
+          </div>
+
+          <div>
+            <input
+              className="border p-2 rounded w-64 mb-2"
+              placeholder="Stream ID"
+              value={streamID}
+              onChange={(e) => setStreamID(e.target.value)}
+            />
+            <button
+              className="bg-green-500 text-white p-2 rounded"
+              onClick={handleWithdraww}
+            >
+              Withdraw Earnings
+            </button>
+          </div>
+        </div>
     </>
   )
 }
